@@ -1,0 +1,25 @@
+{
+  "tests": "./tests/*_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "Nightmare": {
+      "url": "http://dev.inbound.makro.pl/login",
+      "show": true,
+      "waitForTimeout": "10000",
+      "windowSize": "7680x4320"
+    },
+    "ServerSide": {
+      "require": "./custom_helpers/serverside_helper.js"
+    }
+  },
+  "include": {
+    "LoginPage": "./pages/LoginPage.js",
+    "SelectSupplierPage": "./pages/SelectSupplierPage.js",
+    "InboundNavigationPage": "./pages/InboundNavigation.js",
+    "ColumnFiltering": "./pages/ColumnFiltering.js"
+  },
+  "bootstrap": false,
+  "mocha": {},
+  "name": "codeceptjs_poc_poland"
+}

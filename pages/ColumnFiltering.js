@@ -15,17 +15,17 @@ module.exports = {
       "Supplier Number" : "#supplierNumber",
       "Subsystem Article No" : "#subsystemArticleNo",
       "Supplier Name" : "#supplierName",
-      "BUBP" : "bubp",
-      "Currency" : "currency",
-      "Blocking Status" : "blockingStatus",
-      "Sales Price Min" : "salesPriceMin",
-      "Sales Price Max" : "salesPriceMax",
-      "NBP" : "netBuyingPricePerPiece",
-      "Margin" : "margin",
-      "GTIN" : "gtin",
-      "PUAR" : "puar",
-      "Sales Bundle Content" : "bundleContent",
-      "Article Name" : "articleName"
+      "BUBP" : "#bubp",
+      "Currency" : "#currency",
+      "Blocking Status" : "#blockingStatus",
+      "Sales Price Min" : "#salesPriceMin",
+      "Sales Price Max" : "#salesPriceMax",
+      "NBP" : "#netBuyingPricePerPiece",
+      "Margin" : "#margin",
+      "GTIN" : "#gtin",
+      "PUAR" : "#puar",
+      "Sales Bundle Content" : "#bundleContent",
+      "Article Name" : "#articleName"
     },
 
     articles = {

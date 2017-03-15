@@ -1,7 +1,5 @@
 /// <reference path="../steps.d.ts" />
 
-// jmeter -n -t "C:\APPS\Jmeter\Test Plans\Test Dev.jmx" -l "C:\APPS\Jmeter\results" -e -o "C:\APPS\Jmeter\html report"
-
 // The automation scripts work with branch INPL-21
 Feature('Login');
 

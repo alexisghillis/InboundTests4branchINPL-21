@@ -71,4 +71,7 @@ To run the test, run this command inside the folder ./jmeter/
 jmeter -n -t "\Test Plan\Test Dev.jmx" -l "\Results\results" -e -o "\HTML Report\html_report" -JThreads=15
 ````
 The test creates a result file and a HTML report that should be sent via email to the team.
+
 ![Imgur](http://i.imgur.com/Rj9hWda.jpg)
+
+Contact me anytime for questions: alexis-toma.ghillis@metrosystems.net or @godzi on slack

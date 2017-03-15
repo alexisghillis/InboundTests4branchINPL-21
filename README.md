@@ -7,7 +7,7 @@ Following this description are the prerequirments steps you need to make in orde
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 Select environment in the codecept.json in the URL field (suggestion: http://localhost:3000/login, http://dev.inbound.makro.pl/login)
-The triple slash directive : <reference path="../steps.d.ts" /> is used for Atom typescript plugin, so you can code easier.
+The triple slash directive is used for Atom typescript plugin, so you can code easier.
 Do not forget to switch the Nightmare helper "show" attribute to false when running in production.
 
 ### Useful links
@@ -26,16 +26,15 @@ Run the following command to install the necesary modules:
 
 ````
 npm install -g yarn
-npm install -g codeceptjs
+yarn add --dev codeceptjs nightmare nightmare-upload
 npm install chai
-npm install nightmare
-npm i nightmare-upload
 npm install nightmare-real-mouse
 
 ````
 
 ## Running the tests
 
+### Automated tests
 There are two tests. One performs login and logout. 
 The second one performs login, filtering, cleanup and logout.
 The filtering test requires all Article Table columns to be selected. 
@@ -47,3 +46,29 @@ yarn test
 yarn test -- --grep filter
 yarn test -- --grep Login
 ````
+### Performance test
+
+The load test is a .jmx file that holds 3 webservice calls. Every Thread group has Authorization
+and X-Authorization header. The first is for Kubernetes and the second is the application authorization.
+
+````
+HOST: 
+k8sapi1-test6-mcc.metroscales.io/api/v1/proxy/namespaces/default/services/workflow-poland-backend
+SERVICES:
+GET /mdm-members
+POST /mdm-member
+POST /changeRequestsAll
+````
+I encourage you to review this link:
+
+[Create a Jmeter Test Plan](https://jmeter.apache.org/usermanual/build-web-test-plan.html)
+
+In order to add services to this Test Plan, install Jmeter and open the "Test Dev.jmx" file.
+
+To run the test, run this command inside the folder ./jmeter/
+
+````
+jmeter -n -t "\Test Plan\Test Dev.jmx" -l "\Results\results" -e -o "\HTML Report\html_report" -JThreads=15
+````
+The test creates a result file and a HTML report that should be sent via email to the team.
+![Imgur](http://i.imgur.com/Rj9hWda.jpg)

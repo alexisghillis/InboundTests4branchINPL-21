@@ -65,6 +65,15 @@ I encourage you to review this link:
 
 In order to add services to this Test Plan, install Jmeter and open the "Test Dev.jmx" file.
 
+For Unix machine:
+````
+npm install jmeter 
+````
+For Windows machine:
+````
+https://jmeter.apache.org/download_jmeter.cgi
+````
+
 To run the test, run this command inside the folder ./jmeter/
 
 ````
